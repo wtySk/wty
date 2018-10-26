@@ -1,0 +1,19 @@
+{
+  "name":"wtySk/weather",
+  "description":"A weather SDK",
+  "license":"MIT",
+  "authors":[
+    {
+      "name":"wtySk",
+      "email":"wtysk_398312391@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "wtySk\\Weather\\": "./src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  }
+}
