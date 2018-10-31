@@ -1,19 +1,28 @@
 {
-  "name":"wtySk/weather",
-  "description":"A weather SDK",
-  "license":"MIT",
-  "authors":[
+  "name": "wty/weather",
+  "description": "A weather SDK",
+  "license": "MIT",
+  "authors": [
     {
-      "name":"wtySk",
-      "email":"wtysk_398312391@qq.com"
+      "name": "wtySk",
+      "email": "wtysk_398312391@qq.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "wtySk\\Weather\\": "./src/"
+      "Wty\\Weather\\": "./src/"
     }
   },
   "require": {
-    "guzzlehttp/guzzle": "^6.3"
+    "guzzlehttp/guzzle": "^6.3",
+    "phpunit/phpunit": "^6.5",
+    "mockery/mockery": "<=1.2"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Wty\\Weather\\ServiceProvider"
+      ]
+    }
   }
 }
