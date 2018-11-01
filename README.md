@@ -1,3 +1,6 @@
-##first package
+<h1 align="center">weather</h1>
 
-### wty-weather
+
+### 基于高德接口的 php 天气组件
+
+[![Build Status](https://travis-ci.org/wtySk/weather.svg?branch=master)](https://travis-ci.org/wtySk/weather)
