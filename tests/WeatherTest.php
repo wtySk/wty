@@ -1,7 +1,12 @@
 <?php
-/**
- * Author: wtySk
- * Time: 26/10/2018  17:20
+
+/*
+ * This file is part of the wty/weather.
+ *
+ * (c) wtySk <wtysk_398312391@qq.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Wty\Weather\Tests;
@@ -39,7 +44,7 @@ class WeatherTest extends TestCase
                 'city' => '深圳',
                 'output' => 'json',
                 'extensions' => 'base',
-            ]
+            ],
         ])->andReturn($response);
 
         // 将 `getHttpClient` 方法替换为上面创建的 http client 为返回值的模拟方法。
@@ -65,7 +70,6 @@ class WeatherTest extends TestCase
         $w->allows()->getHttpClient()->andReturn($client);
 
         $this->assertSame('<hello>content</hello>', $w->getWeather('深圳', 'all', 'xml'));
-
     }
 
     public function testSetGuzzleOptions()
@@ -84,7 +88,6 @@ class WeatherTest extends TestCase
 
     public function testGetWeatherWithInvalidType()
     {
-
         $weather = new Weather('mock-key');
 
 //        // 断言会抛出此异常类
@@ -95,7 +98,6 @@ class WeatherTest extends TestCase
         $weather->getWeather('深圳', 'foo');
 
         $this->fail('Failed to assert getWeather throw exception with invalid argument.');
-
     }
 
     // 检查 $format 参数
@@ -110,7 +112,7 @@ class WeatherTest extends TestCase
         $this->expectExceptionMessage('Invalid response format: array');
 
         // 因为支持的格式为 xml/json，所以传入 array 会抛出异常
-        $weather->getWeather('北京','base','array');
+        $weather->getWeather('北京', 'base', 'array');
 
         // 如果没有抛出异常，就会运行到这行，标记当前测试没成功
         $this->fail('没有抛出异常');
@@ -132,5 +134,4 @@ class WeatherTest extends TestCase
 
         $w->getWeather('深圳');
     }
-
 }
